@@ -1,3 +1,45 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.myInput::placeholder{
+  position: absolute; /* Make the placeholder absolute for positioning */
+  top: 50%; /* Center the placeholder vertically */
+  transform: translateY(-50%); /* Offset the placeholder vertically */
+}
+
+.myInput:focus::placeholder{
+  transform: translateY(-100%); /* Move the placeholder upwards on focus (optional for animation) */
+  font-size: small;
+}
+
+label{
+    display: none;
+}
+
+.loader-container {
+    position: relative;
+    width: 64px;
+    height: 64px;
+}
+
+.loader {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 4px solid #fff;
+    border-radius: 50%;
+    border-top: 7px solid #e50914; /* Netflix red color */
+    border-left: 7px solid #e50914; /* Netflix red color */
+    border-right: 7px solid #e50914; /* Netflix red color */
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
